@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Experience Zone</title>
+
+<style>
+body {
+    font-family: Segoe UI, Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+header {
+    background: linear-gradient(135deg,#003366,#0054a6);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+nav {
+    background: white;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+}
+
+section {
+    background: white;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 15px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+button {
+    background: #0054a6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Finance Experience Zone</h1>
+    <p>Mer än siffror – vi möjliggör affären</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#uppdrag">Vårt Uppdrag</a></li>
+        <li><a href="#team">Teamet</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#faq">FAQ</a></li>
+    </ul>
+</nav>
+
+<section id="uppdrag">
+    <h2>Vårt uppdrag</h2>
+    <p>
+        Vi stödjer verksamheten med redovisning, controlling,
+        rapportering, intern kontroll och affärsstöd.
+    </p>
+</section>
+
+<section id="team">
+    <h2>Möt teamet</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>BA CFO</h3>
+            <p>Mattias Ringman</p>
+        </div>
+
+        <div class="card">
+            <h3>Accounting</h3>
+            <p>Andreas Tysk och team</p>
+        </div>
+
+        <div class="card">
+            <h3>BA Controller</h3>
+            <p>Budget och prognos</p>
+        </div>
+
+        <div class="card">
+            <h3>Tactical Support Solutions</h3>
+            <p>Affärsstöd till TSS</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="quiz">
+    <h2>Finance Quiz</h2>
+
+    <p id="question">
+        Klicka på knappen för en fråga.
+    </p>
+
+    <button onclick="nextQuestion()">
+        Visa fråga
+    </button>
+</section>
+
+<section id="faq">
+    <h2>FAQ</h2>
+
+    <details>
+        <summary>Vem ansvarar för företagets ekonomi?</summary>
+        <p>Alla medarbetare bidrar till god ekonomisk styrning.</p>
+    </details>
+
+    <details>
+        <summary>Vad är en periodisering?</summary>
+        <p>Kostnader och intäkter redovisas i rätt period.</p>
+    </details>
+
+</section>
+
+<footer>
+    Finance & Accounting
+</footer>
+
+<script>
+
+const questions = [
+    "Vad betyder EBITDA?",
+    "Vad är rörelsekapital?",
+    "Vad är en periodisering?",
+    "Vad är skillnaden mellan budget och prognos?"
+];
+
+function nextQuestion() {
+
+    document.getElementById("question").innerHTML =
+        questions[Math.floor(Math.random() * questions.length)];
+
+}
+
+</script>
+
+</body>
+</html>
